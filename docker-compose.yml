@@ -1,9 +1,9 @@
 version: "3"
 services:
   web:
-    image: hello-swarm
+    image: hello-docker
     deploy:
-      replicas: 4
+      replicas: 8
       restart_policy:
         condition: on-failure
     ports:
@@ -12,6 +12,7 @@ services:
       - webnet
     environment:
       - REDIS_HOST=redis
+  # Redis Image
   redis:
     image : redis:5.0.4
     ports:

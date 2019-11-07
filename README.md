@@ -3,9 +3,9 @@
 ## Basic Docker
 - test basic index.js
 - Install docker
-- Build Docker image with  with `docker build -t hello-docker .`
+- Build Docker image with  with `docker build -t hello-docker .` -t == tagged give it a name.
 - View your image with `docker image ls hello-docker`
-- Run with `docker run -d -p 3000:3000 hello-docker`
+- Run with `docker run -d -p 3000:3000 hello-docker` -d == detached : run in background. -p map it to our 3000 port.
 - View with `docker container ls`
 - Stop with `docker stop <container id>`
 - Push your docker image with docker push https://docs.docker.com/engine/reference/commandline/push/
@@ -13,13 +13,13 @@
 - Try running someone else's image
 
 ## Inspecting docker containers
-- Get into your contaienr with `docker exec -it <id> sh`
+- Get into your contaienr with `docker exec -it <id> sh` // it = interactive :gives terminal inside the docker.
 - You can now navigate and run commands from inside the container
 - To get out, `exit`
 - To view running logs `docker logs <id>`
 
 ## Docker Swarm
-- Enter swarm mode with `docker swarm init`
+- Enter swarm mode with `docker swarm init` // Make it a swarm manager.
 - Try to join a swarm with `docker swarm join --token xxx`
 - Deploy stack with `docker stack deploy -c docker-compose.yml swarm-of-hellos`
 - View status with `docker service ls`
